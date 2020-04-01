@@ -1,9 +1,9 @@
-# K8s-filter
+# k8s-yaml-filter
 
 ### Installation
 
 ```sh
-npm i -g k8s-filter
+npm i -g k8s-yaml-filter
 ```
 
 ### usage
@@ -27,6 +27,6 @@ cat foo.yaml | kubectl apply -f -
 on the last run you could choose
 
  -o CustomResourceDefinition,ValidatingWebhookConfiguration
- 
+
 but its a bit moot since Kubernetes will properly apply the unchanged
 CRD and WebHook
