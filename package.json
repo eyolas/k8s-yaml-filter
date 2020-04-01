@@ -1,0 +1,19 @@
+{
+  "name": "k8s-filter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Filter input YAML in Kubernetes format into output (stdin to stdout)",
+  "bin": {
+    "k8sf": "./filter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabliam/gabliam.git"
+  },
+  "author": "David Touzet <dtouzet@gmail.com>",
+  "dependencies": {
+    "get-stdin": "^7.0.0",
+    "js-yaml": "^3.13.1",
+    "yargs": "^15.3.1"
+  }
+}
