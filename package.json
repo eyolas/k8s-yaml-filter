@@ -1,6 +1,6 @@
 {
   "name": "k8s-yaml-filter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Filter input YAML in Kubernetes format into output (stdin to stdout)",
   "bin": {
