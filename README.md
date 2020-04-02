@@ -20,13 +20,15 @@ The use case is with e.g. Kubernetes, you have a YAML file
 which has CRD, webhook, and objects using these.
 
 Apply the same YAML 3 times:
+```sh
 cat foo.yaml | yaml_filter -i CustomResourceDefinition | kubectl apply -f -
 cat foo.yaml | yaml_filter -i ValidatingWebhookConfiguration | kubectl apply -f -
 cat foo.yaml | kubectl apply -f -
+```
 
 on the last run you could choose
 
- -o CustomResourceDefinition,ValidatingWebhookConfiguration
+-o CustomResourceDefinition,ValidatingWebhookConfiguration
 
 but its a bit moot since Kubernetes will properly apply the unchanged
 CRD and WebHook
