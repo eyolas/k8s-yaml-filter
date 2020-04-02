@@ -19,10 +19,12 @@ objects in the 'out_filter', and writes the result to stdout.
 The use case is with e.g. Kubernetes, you have a YAML file
 which has CRD, webhook, and objects using these.
 
+By default filter for kind
+
 Apply the same YAML 3 times:
 ```sh
-cat foo.yaml | yaml_filter -i CustomResourceDefinition | kubectl apply -f -
-cat foo.yaml | yaml_filter -i ValidatingWebhookConfiguration | kubectl apply -f -
+cat foo.yaml | k8sf -i CustomResourceDefinition | kubectl apply -f -
+cat foo.yaml | k8sf -i ValidatingWebhookConfiguration | kubectl apply -f -
 cat foo.yaml | kubectl apply -f -
 ```
 
@@ -32,3 +34,9 @@ on the last run you could choose
 
 but its a bit moot since Kubernetes will properly apply the unchanged
 CRD and WebHook
+
+
+filter on other field:
+```sh
+cat foo.yaml | k8sf -i metadata/namespace=kong,metadata/name=kong | kubectl apply -f -
+```
